@@ -28,9 +28,9 @@ def main(inputImage):
 			block_8x8 = img[r:r+8, c:c+8, 0].astype(np.float32)
 			dct_8x8 = cv2.dct(block_8x8)
 			block_8x8 = quantizeByCoefficient(dct_8x8, 5)
-			block_8x8 = np.linalg.inv(dct_8x8) * block_8x8	
+			# block_8x8 = np.linalg.inv(dct_8x8) * block_8x8
+			jpg[r:r+8, c:c+8] = block_8x8	
 		# need to add blocks in jpg
-			print((r/8))
 
 
 if __name__ == '__main__':
